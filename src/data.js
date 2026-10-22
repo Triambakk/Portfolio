@@ -16,12 +16,7 @@ export const spec = [
   ['Now', 'AI Data Analyst Intern, InAmigos Foundation'],
 ]
 
-export const focus = [
-  ['Retrieval and LLM apps', 'A RAG question-answering app built on embeddings, FAISS and the Gemini API.'],
-  ['Data cleaning and analysis', 'An ETL pipeline for messy CRM data, and day-to-day analysis with Pandas, SQL and spreadsheets.'],
-  ['Backend and APIs', 'FastAPI and Django REST services with validation, authentication, tests and API docs.'],
-  ['Clear write-ups', 'Step-by-step READMEs, Swagger documentation and Postman collections.'],
-]
+export const hobbies = ['Digital art', 'Badminton', 'Table tennis', 'Reading novels']
 
 export const experience = [
   {
@@ -195,22 +190,24 @@ export const concept = {
   ],
   architecture: [
     ['Approved documents', 'Specs, guidelines, material sheets'],
-    ['Ingest', 'Extract text, chunk, keep file name and page'],
-    ['Embed + index', 'Sentence embeddings in a vector index'],
-    ['Retrieve', 'Top matching passages per question'],
-    ['Answer', 'An LLM writes a short reply from those passages only, with citations'],
+    ['Data pipeline', 'Extract text, clean it, tag each file with name, version and date, drop duplicates'],
+    ['Embed + index', 'Chunk the text and store embeddings with file and page'],
+    ['Retrieve + answer', 'Top passages, then a short cited reply from an LLM'],
+    ['Usage analytics', 'Log questions, results and feedback; review them in a simple dashboard'],
   ],
   prototype: [
     'Start from the RAG pattern already working in my PDF assistant: PyMuPDF, Sentence Transformers, FAISS and a Streamlit front end.',
-    'Extend it from one uploaded PDF to a folder of approved documents, storing source file and page with every chunk.',
-    'Add a feedback button on each answer so wrong or unhelpful results are captured.',
-    'Keep a simple log of questions and retrieved passages for evaluation. No new infrastructure is needed to test the idea.',
+    'Add a small ETL script in Pandas that cleans document text and metadata (name, version, date) and removes duplicates, like the cleaning step in my integration engine.',
+    'Extend the app from one uploaded PDF to a folder of approved documents, storing source file and page with every chunk.',
+    'Add a feedback button on each answer, and log every question, the passages returned and the feedback to a SQLite table.',
+    'Analyse that log with SQL and Pandas, and chart it in Streamlit. No new infrastructure is needed to test the idea.',
   ],
   evaluation: [
     ['Retrieval relevance', 'Write 30 to 50 realistic questions with the correct source page marked, then check how often it appears in the top 3 results.'],
     ['Task completion time', 'Time a few people finding the same answers by hand and with the tool.'],
     ['Answer trust', 'Check that each cited passage supports the answer, and count answers that should have said "not found".'],
     ['User feedback', 'A short rating plus a free-text note after each answer; review the misses.'],
+    ['Content gaps', 'From the logs, group questions by topic, find ones with no good match, and list documents that are never retrieved. These point to missing or outdated material.'],
   ],
   disclaimer:
     'A proposed concept, not a completed project. It is an illustrative scenario: I have not worked with designers or with any company documents.',

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { me, spec, focus, experience, education, achievements, projects, concept, skills } from './data.js'
+import { me, spec, hobbies, experience, education, achievements, projects, concept, skills } from './data.js'
 
 function Reveal({ children, as: Tag = 'div', className = '' }) {
   const ref = useRef(null)
@@ -44,7 +44,7 @@ function Portrait() {
   return (
     <div className="portrait">
       {ok
-        ? <img src="/photo.jpg" alt={`Portrait of ${me.name}`} onError={() => setOk(false)} />
+        ? <img src="/photo.png" alt={`Portrait of ${me.name}`} onError={() => setOk(false)} />
         : <span className="mono fallback" aria-hidden="true">T.RB</span>}
     </div>
   )
@@ -85,25 +85,25 @@ function Hero() {
 function About() {
   return (
     <section id="about" className="wrap section">
-      <Head label="About">How I like to work</Head>
+      <Head label="About">A little about me</Head>
       <div className="two">
         <Reveal className="prose">
           <p>
             I'm a B.Tech student in Computer Science and Engineering at SRM Institute of Science and
-            Technology, graduating in 2027. I like the practical end of software: retrieval, clean
-            data, and tools that save someone a few minutes every day.
+            Technology, graduating in 2027. I'm still learning, and I enjoy building small projects
+            around a concrete problem, whether that's searching a document, cleaning messy data or
+            making an app more reliable.
           </p>
           <p>
-            My habit is to find the step where time gets lost, build the smallest thing that removes
-            it, then write it up so someone else can run it. I would rather ship a modest tool that
-            works than demo something impressive that doesn't.
+            I like projects that I can finish, run and explain, and I try to write them up so
+            someone else can follow along.
           </p>
         </Reveal>
         <Reveal className="fit">
-          <p className="mono small">Where I spend my time</p>
+          <p className="mono small">Outside of code</p>
           <ul>
-            {focus.map(([t, d]) => (
-              <li key={t}><strong>{t}</strong><span>{d}</span></li>
+            {hobbies.map((h) => (
+              <li key={h}><strong>{h}</strong></li>
             ))}
           </ul>
         </Reveal>

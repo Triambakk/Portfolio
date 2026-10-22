@@ -134,7 +134,7 @@ h4.mono { color: var(--muted); margin: 30px 0 10px; font-weight: 500; }
 .concept .intro { margin-bottom: 8px; }
 .steps.four { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
 
-.flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
+.flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
 .node { position: relative; padding: 16px 14px; border: 1px solid var(--ink); background: var(--paper-2); display: grid; gap: 4px; align-content: start; margin-right: 22px; }
 .node:last-child { margin-right: 0; background: var(--accent-soft); }
 .node strong { font-size: 0.93rem; }
